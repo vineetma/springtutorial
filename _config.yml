@@ -1,0 +1,7 @@
+baseurl: /springtutorial
+destination: ./_site
+plugins: ./_plugins
+layouts: ./_layouts
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
+highlighter: pygments
