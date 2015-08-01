@@ -4,14 +4,8 @@ overview: true
 title: Lets add spring
 ---
 
-#How to get this Junit?
+under construction
 
-#What is the new code to do Junit?
-
-#Making changes to ant file
-
-#Run
-
-[Adding spring framework](lets_add_spring.html)
+[Adding construction injection](lets_do_constructor_injection.html)
 
 [Back to home](index.html)
