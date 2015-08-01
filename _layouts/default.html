@@ -1,14 +1,7 @@
-<html>
-<head>
-<title>{{ page.title }} </title>
-</head>
+{% include top.html %}
 <body>
-<header>
-  <h1>Lets learn while we do something useful</h1>
-  <h2>{{ page.title }}</h2>
-</header>
+{% include header.html %}
 <section id="main-content">
  {{ content }}
 </section>
-<footer>
-</footer>
+{% include footer.html %}
