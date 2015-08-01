@@ -5,8 +5,11 @@ title: Lets get started
 ---
 
 #Write a program
+
 .. code for storeitem
+
 .. code for test class (with main)
+
 Create a class StoreItem, with following attributes.
 
 #Create ant file
