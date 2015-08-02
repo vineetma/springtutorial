@@ -10,3 +10,6 @@
   - lets_add_spring
   - lets_do_constructor_injection
   - lets_add_aspect_programming
+- title: Credits
+  docs:
+  - credits
