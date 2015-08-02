@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Lets add log4j support
+title: Add log4j support
 ---
 
 #Where to get these libraries?

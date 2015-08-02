@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Now time to do constructor injection
+title: Constructor injection
 ---
 
 under construction

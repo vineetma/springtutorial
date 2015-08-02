@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Lets add spring
+title: Add spring
 ---
 
 under construction

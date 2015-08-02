@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Lets add Junit to automate our testing
+title: Automate testing
 ---
 
 #How to get this Junit?

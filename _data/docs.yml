@@ -1,47 +1,12 @@
 - title: Getting Started
   docs:
-  - home
-  - quickstart
-  - installation
-  - usage
-  - structure
-  - configuration
+  - lets_get_started
+  - lets_create_jar
+  - lets_add_junit
+  - lets_add_log4j
 
-- title: Your Content
+- title: Adding Spring
   docs:
-  - frontmatter
-  - posts
-  - drafts
-  - pages
-  - static-files
-  - variables
-  - collections
-  - datafiles
-  - assets
-  - migrations
-
-- title: Customization
-  docs:
-  - templates
-  - permalinks
-  - pagination
-  - plugins
-  - extras
-
-- title: Deployment
-  docs:
-  - github-pages
-  - deployment-methods
-  - continuous-integration
-
-- title: Miscellaneous
-  docs:
-  - troubleshooting
-  - sites
-  - resources
-  - upgrading
-
-- title: Meta
-  docs:
-  - contributing
-  - history
+  - lets_add_spring
+  - lets_do_constructor_injection
+  - lets_add_aspect_programming

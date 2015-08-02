@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Lets get started
+title: Getting started
 ---
 
 #Write a program
@@ -17,7 +17,5 @@ Create a class StoreItem, with following attributes.
 
 #Run
 
-
-[Creating Jar File](lets_create_jar.html)
 
 [Back to home](index.html)

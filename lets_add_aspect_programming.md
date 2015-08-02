@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Adding Aspects to the project
+title: Adding Aspects
 ---
 
 under construction

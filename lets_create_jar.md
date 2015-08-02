@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 overview: true
-title: Lets create JAR
+title: Create JAR
 ---
 
 #Add target for Jar
