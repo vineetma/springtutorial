@@ -5,3 +5,5 @@ layouts: ./_layouts
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 highlighter: pygments
+
+repository: https://github.com/vineetma/springtutorial
