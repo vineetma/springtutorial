@@ -1,7 +1,7 @@
 ---
 layout: docs
 overview: true
-title: Constructor injection
+title: Dependency Injections
 ---
 
 under construction
