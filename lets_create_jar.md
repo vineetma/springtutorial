@@ -81,9 +81,46 @@ Item:
 
 + why we created jar? It organizes scattered classes into one file. Command line is easier to use. It provides an executing environment with preset inputs.
 
-##Add jar to ``ant``
+##Add jar to ant
 
+Add following target to ``build.xml`` file.
+{% highlight xml %}
+<target name="jar" depends="compile">
+ <jar destfile="${jar.file}" 
+      basedir="${classes.dir}"
+      manifest="${src.dir}/manifest.mf">
+</jar>
+{% endhighlight %}
 
-[add external library - log4j](lets_add_log4j.html)
+**Notes**
 
++ it is kept very simple. Following may be added by using the [help](https://ant.apache.org/manual/Tasks/jar.html): excludefiles, includefiles, compress
+
+Modify ``run`` target to add dependency on jar. We don't want now to continue with individually running Test.class.
+
+{% highlight xml %}
+<target name="run" depends="jar">
+
+{% endhighlight %}
+
+Lets run it once again, to sure, we have not spoiled anything:
+
+{% highlight bash %}
+ant run
+Buildfile: /home/vineet/workspace/javatutorials/tutorials-code/StoresWithSpringAop/build.xml
+
+compile:
+
+jar:
+
+run:
+     [java] Hello World
+     [java] Item: 
+     [java]  .. ERP Code: E32334
+     [java]  .. Description: Shirt XL Cotton - Red - Arrow
+     [java]  .. Description: Shirt L Cotton - Red - Arrow
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+{% endhighlight %}
 [Back to home](index.html)
