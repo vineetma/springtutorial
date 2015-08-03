@@ -4,6 +4,7 @@
 <property name="src.dir" value="${base.dir}/src" />
 <property name="build.dir" value="${base.dir}/build" />
 <property name="classes.dir" value="${build.dir}/classes" />
+<property name="jar.file" value="${build.dir}/${ant.project.name}.jar" />
 
 <target name="compile">
   <javac includeantruntime="false" srcdir="${src.dir}" 
@@ -15,7 +16,13 @@
     <fileset dir="${classes.dir}" includes="**/*.class" />
   </delete>
 </target>
-<target name="run" depends="compile">
+<target name="jar" depends="compile">
+ <jar destfile="${jar.file}" 
+      basedir="${classes.dir}"
+      manifest="${src.dir}/manifest.mf">
+</jar>
+</target>
+<target name="run" depends="jar">
   <java classname="com.dakinegroup.Test" classpath="${classes.dir}" />
 </target>
 </project>
