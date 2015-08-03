@@ -3,7 +3,7 @@ layout: docs
 overview: true
 title: Create JAR
 ---
-Updated code for this part is available [here](https://github.com/vineetma/springtutorial/tree/5f816b49a7c55b003a605d99c2998e26d63cb3e0/StoresWithSpringAop)
+Updated code for this part is available [here](https://github.com/vineetma/springtutorial/tree/ed6d9e9a95bffe2819e806ee0c8c396af3a96e73/StoresWithSpringAop)
 #Manually create jar
 
 {% highlight bash %}
