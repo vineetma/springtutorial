@@ -1,0 +1,21 @@
+<project name="StoresWithSpringAop" default="run">
+
+<property name="base.dir" value="." />
+<property name="src.dir" value="${base.dir}/src" />
+<property name="build.dir" value="${base.dir}/build" />
+<property name="classes.dir" value="${build.dir}/classes" />
+
+<target name="compile">
+  <javac includeantruntime="false" srcdir="${src.dir}" 
+          destdir="${classes.dir}"
+          classpath="${classes.dir}" />
+</target>
+<target name="clean">
+  <delete>
+    <fileset dir="${classes.dir}" includes="**/*.class" />
+  </delete>
+</target>
+<target name="run" depends="compile">
+  <java classname="com.dakinegroup.Test" classpath="${classes.dir}" />
+</target>
+</project>
