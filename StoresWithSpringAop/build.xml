@@ -2,14 +2,18 @@
 
 <property name="base.dir" value="." />
 <property name="src.dir" value="${base.dir}/src" />
+<property name="lib.dir" value="${base.dir}/lib" />
 <property name="build.dir" value="${base.dir}/build" />
 <property name="classes.dir" value="${build.dir}/classes" />
 <property name="jar.file" value="${build.dir}/${ant.project.name}.jar" />
-
+<path id="application" location="${jar.file}" />
+<path id="classpath">
+  <fileset dir="${lib.dir}" includes="**/*.jar" />
+</path>
 <target name="compile">
   <javac includeantruntime="false" srcdir="${src.dir}" 
           destdir="${classes.dir}"
-          classpath="${classes.dir}" />
+          classpathref="classpath" />
 </target>
 <target name="clean">
   <delete>
@@ -25,4 +29,21 @@
 <target name="run" depends="jar">
   <java classname="com.dakinegroup.Test" classpath="${classes.dir}" />
 </target>
+
+<target name="junit" depends="jar">
+       <junit printsummary="yes">
+<formatter type="plain" usefile="false" />
+            <classpath>
+                <path refid="classpath"/>
+                <path refid="application"/>
+            </classpath>
+            
+            <batchtest fork="yes">
+                <fileset dir="${src.dir}">
+                  <include name="**/*Test.java"/>
+		  <exclude name="**/Test.java" />
+                </fileset>
+            </batchtest>
+        </junit>      
+  </target>
 </project>

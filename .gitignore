@@ -2,4 +2,5 @@
 _site
 build
 abc
+lib
 *debuglog.txt
