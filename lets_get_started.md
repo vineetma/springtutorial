@@ -5,7 +5,7 @@ title: Getting started
 ---
 ##Getting Ready
 
-We shall start writing this initial piece of code using plain usre friendly code editor like sublime. Crate following directory structure:
+We shall start writing this initial piece of code using plain user friendly code editor like [sublime](http://www.sublimetext.com/). Create following directory structure:
 
 {% highlight Java %}
 StoresWithSpringAop
@@ -18,7 +18,9 @@ ${HOME} <------ whatever is your home directory followed by work directory
             StoreItem.java <---------  file
             Store.java <---------  file
             Test.java <---------  file
-    {% endhighlight %}
+{% endhighlight %}
+
+``StoresWithSpringAop`` is the name of our first exercise in this series.
 
 You can download the source from [here](https://github.com/vineetma/springtutorial/tree/master/StoresWithSpringAop). Try not to use it else learning will be incomplete. Your learning is weak, till you struggle yourself. This tutorial is just a small help to provide direction, tips.
 
@@ -103,6 +105,7 @@ void displayInfo() {
 
 
 ###Store.java
+
 Create store to contain store items (Store.java). It has following attributes:
 
 + items
@@ -196,7 +199,7 @@ public class Store {
 
 ###Main  Test Code
 
-Write test code in Test.Java in the src directory
+Write test code in Test.Java (better to calls it main, test code is typically referred as JUnit Code) in the src directory
 
 {% highlight Java%}
 package com.dakinegroup;
