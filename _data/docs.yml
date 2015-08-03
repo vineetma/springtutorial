@@ -4,12 +4,17 @@
   - lets_create_jar
   - lets_add_junit
   - lets_add_log4j
+  - lets_replace_with_maven
 
 - title: Adding Spring
   docs:
   - lets_add_spring
   - lets_do_constructor_injection
   - lets_add_aspect_programming
+  - integration_with_web
+  - integration_with_hibernate_jpa
+  - spring_communications
+  
 - title: Credits
   docs:
   - credits
