@@ -10,6 +10,11 @@ Source code for this step is available [here](https://github.com/vineetma/spring
 
 You can download junit relevant libraries from [here](https://github.com/junit-team/junit/wiki/Download-and-Install)
 
+Also, one may need to install junit command,
+{% highlight bash %}
+sudo apt-get install junit
+{% endhighlight %}
+
 #Testing for StoreItem - StoreItemTest.java
 It is a convention to name the test cases using following:
 
