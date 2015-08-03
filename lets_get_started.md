@@ -22,7 +22,7 @@ ${HOME} <------ whatever is your home directory followed by work directory
 
 ``StoresWithSpringAop`` is the name of our first exercise in this series.
 
-You can download the source from [here](https://github.com/vineetma/springtutorial/tree/master/StoresWithSpringAop). Try not to use it else learning will be incomplete. Your learning is weak, till you struggle yourself. This tutorial is just a small help to provide direction, tips.
+You can download the source from [here](https://github.com/vineetma/springtutorial/tree/d1a2bc1f405665a98878386f4daaa6938902480a/StoresWithSpringAop). Try not to use it else learning will be incomplete. Your learning is weak, till you struggle yourself. This tutorial is just a small help to provide direction, tips.
 
 For this project, lets assume it to be /home/storedev as ${HOME}. Therefore, path for src would be: ``/home/storedev/workspace/StoresWithSpringAop/src``
 
