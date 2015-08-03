@@ -4,7 +4,7 @@ overview: true
 title: Automate testing
 ---
 
-Source code for this step is available [here](https://github.com/vineetma/springtutorial/tree/f8544cbe94b3044196c33eb4b70a8cc54b839bf0)
+Source code for this step is available [here](https://github.com/vineetma/springtutorial/tree/d7469c38e768e238990659f2ca9de519415fabfd)
 
 #Where to get these libraries?
 
