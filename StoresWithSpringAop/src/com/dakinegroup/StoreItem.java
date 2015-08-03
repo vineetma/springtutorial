@@ -1,12 +1,16 @@
 package com.dakinegroup;
 
 import java.util.Date;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 
 public class StoreItem {
  private String description1;
  private String description2;
  private String erpcode;
  private Date dtCreated;
+private static final Logger logger = LogManager.getLogger(StoreItem.class);
  
  // getters and setters
  public String getDescription1() {
@@ -56,6 +60,10 @@ void displayInfo() {
      System.out.println(" .. ERP Code: " + getErpcode());
      System.out.println(" .. Description: " + getDescription1());
      System.out.println(" .. Description: " + getDescription2());    
+     logger.trace("Item: " );
+     logger.trace(" .. ERP Code: " + getErpcode());
+     logger.trace(" .. Description: " + getDescription1());
+     logger.trace(" .. Description: " + getDescription2());    
 }
 
 }

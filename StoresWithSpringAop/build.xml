@@ -14,6 +14,11 @@
   <javac includeantruntime="false" srcdir="${src.dir}" 
           destdir="${classes.dir}"
           classpathref="classpath" />
+  <copy todir="${classes.dir}">
+   <resources>
+     <file file="${src.dir}/log4j2.xml" />
+   </resources>
+  </copy>
 </target>
 <target name="clean">
   <delete>
@@ -27,7 +32,12 @@
 </jar>
 </target>
 <target name="run" depends="jar">
-  <java classname="com.dakinegroup.Test" classpath="${classes.dir}" />
+  <java fork="true" classname="com.dakinegroup.Test">
+    <classpath>
+     <path refid="classpath" />
+     <path refid="application" />
+    </classpath>
+  </java>
 </target>
 
 <target name="junit" depends="jar">
