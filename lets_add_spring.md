@@ -6,6 +6,10 @@ title: Add spring
 
 Source of this code is available from [here](https://github.com/vineetma/springtutorial/tree/dcab41e13d44dfe609138d0a4b8bdcc891a8389e)
 
+Spring has evolved significantly. We will start here from the basics, for which Spring used to be known earlier. Today, it has several integrations and extensive of annotations that make whole development much easier. Idea is to understand what is going behind the scene. We will come to latest features of Spring later as we start to use maven.
+
+In this example, we will create store using context file with two items. Note that we will not write any java code to do so. All of it is taken care by spring framework, using dependency injections.
+
 #Get spring jar files
 Download latest spring jar files (here [4.2.0](http://maven.springframework.org/release/org/springframework/spring/4.2.0.RELEASE/) is used) from [here](http://maven.springframework.org/release/org/springframework/spring/).
 
@@ -15,7 +19,7 @@ of our project.
 Spring framework also uses LogFactory from commons-logging. So that also requires to be downloaded. Get it from [here](http://commons.apache.org/proper/commons-logging/download_logging.cgi)
 
 #Understanding Dependency Injection
-Simply put, instead of writing code to instantiate object and make it available for use with other object, we write an xml, initialize it there and connect the objects with each other. By doing so, we are able to avoid changes to code for any change in relationships between the objects and their initial states.
+Simply put, instead of writing code to instantiate object and make it available for use with other object, we write an xml, initialize it there and connect the objects with each other. By doing so, we are able to avoid changes to code for any change in relationships between the objects and their initial states. More on dependency injections, see [here](lets_do_constructor_injection.html).
 
 This file is called, applicationContext.xml.
 

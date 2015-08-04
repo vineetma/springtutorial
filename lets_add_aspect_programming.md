@@ -4,8 +4,13 @@ overview: true
 title: Adding Aspects
 ---
 
-under construction
+#Annotations called aspect
 
+
+#Commonly used Aspects
+
+
+#Remember Junit
 
 
 [Back to home](index.html)
