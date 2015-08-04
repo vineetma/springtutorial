@@ -4,8 +4,6 @@ overview: true
 title: Introduction
 ---
 
-Source code for the project can be accessed at [Github](https://github.com/vineetma/stores).
-
 #Use Case
 We have to build a store book keeping mechanism. For this situation, the store is a simple container, which has multiple items. An item is identified by Erp Code, Description, Location. Store also has a location, name.
 
@@ -30,6 +28,7 @@ Table of Contents
 + [Checkout constructor injection](lets_do_constructor_injection.html)
 + [Time to understand complex AOP](lets_add_aspect_programming.html)
 
+Source code for the project can be accessed at [Github](https://github.com/vineetma/stores).
 
 [Lets get started](lets_get_started.html)
 
