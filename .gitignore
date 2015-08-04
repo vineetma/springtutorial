@@ -7,3 +7,4 @@ lib
 apache-log4j-2.3-bin/
 .ant*
 *.zip
+**/target/*
