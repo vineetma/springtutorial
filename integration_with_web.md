@@ -197,6 +197,18 @@ $ mvn package
 $ java -jar target/stores-app-0.1.0.jar
 {% endhighlight %}
 
+Open code at browser: http://localhost:8080/create?id=test
+
+![screendump001](img/run001.jpg)
+
+On the terminal, you will see log4j trace coming as..
+
+{% highlight bash %}
+[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-08-04 20:21:06.845  INFO 27545 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-08-04 20:21:06.877  INFO 27545 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+20:21:07.636 [http-nio-8080-exec-1] TRACE com.dakinegroup.storesApp.StoreItem - Store Id: test
+{% endhighlight %}
 Source code till this point can be downloaded from [here](https://github.com/vineetma/springtutorial/tree/a6ecd6a5438518f87ab857cba37095b8051037c4/StoresWithMaven)
 
 #Adding Front End (AngularJs)
