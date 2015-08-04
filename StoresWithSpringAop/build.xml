@@ -17,6 +17,7 @@
   <copy todir="${classes.dir}">
    <resources>
      <file file="${src.dir}/log4j2.xml" />
+     <file file="${src.dir}/applicationContext.xml" />
    </resources>
   </copy>
 </target>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <bean id="storeitem1" class="com.dakinegroup.StoreItem">  
+       <property name="erpcode" value="05230419"></property>  
+        <property name="description1" value="Steel Plate"></property>  
+       <property name="description2" value="Galvanised Hammered Steel"></property>  
+    </bean>  
+    <bean id="storeitem2" class="com.dakinegroup.StoreItem">  
+        <constructor-arg value="0229003" type="String"></constructor-arg>
+    </bean>  
+    <bean id="store1" class="com.dakinegroup.Store">
+        <property name="items">
+            <list>
+                <ref bean="storeitem1" />
+                <ref bean="storeitem2" />
+            </list>
+        </property>
+    </bean>
+
+</beans>
