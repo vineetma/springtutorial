@@ -1,4 +1,4 @@
-package com.dakinegroup.storesApp;
+package com.dakinegroup;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
