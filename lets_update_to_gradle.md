@@ -226,6 +226,13 @@ subprojects {
 
 Gradle file in individual sub-projects shall have further modification/addition to the properties received from root, as the need may be.
 
+#Adding eclipse support
+It is as simple as
+
+{% highlight bash %}
+apply plugin: 'eclipse'
+{% endhighlight %}
+
 #Relevant Templates
 **TODO**: Include reference to the URL where such templates are mentioned. 
 **TODO**: List commonly used, specifically the one that we would like to use for the storesapp application. 

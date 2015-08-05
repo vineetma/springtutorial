@@ -46,7 +46,7 @@ In our example of Stores, for example, we want to create a store, 2 different it
        <property name="description2" value="Galvanised Hammered Steel"></property>
     </bean>
     <bean id="storeitem2" class="com.dakinegroup.StoreItem">
-        <constructor-arg value="0229003" type="String"></constructor-arg>
+       <property name="erpcode" value="0229003"></property>
     </bean>
     <bean id="store1" class="com.dakinegroup.Store">
         <property name="items">
