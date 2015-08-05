@@ -16,6 +16,7 @@
 - title: REST Services
   docs:
   - integration_with_web
+  - lets_add_angularjs
   - integration_with_hibernate_jpa
   - spring_communications
   
