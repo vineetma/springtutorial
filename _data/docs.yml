@@ -5,6 +5,7 @@
   - lets_add_junit
   - lets_add_log4j
   - lets_replace_with_maven
+  - lets_update_to_gradle
 
 - title: Adding Spring
   docs:
