@@ -3,6 +3,9 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;  
 import org.springframework.core.io.ClassPathResource;  
 import org.springframework.core.io.Resource;  
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
   
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -22,5 +25,11 @@ public class Test {
         
         Store si2 = (Store)factory.getBean("store1");
         si2.displayInfo();
+
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Store store1 = (Store) context.getBean("store1Proxy");
+		store1.addItem(new StoreItem("A333245"));
+		store1.displayInfo();
+		System.out.println("--------------");
     }
 }

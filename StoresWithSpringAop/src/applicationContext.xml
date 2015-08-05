@@ -32,4 +32,23 @@
         </property>
     </bean>
 
+    <bean id="doBeforeMethodBean"
+            class="com.dakinegroup.aop.DoBeforeMethod" />
+    <bean id="doAfterMethodBean"
+        class="com.dakinegroup.aop.DoAfterMethod" />
+    <bean id="doAroundMethodBean"
+        class="com.dakinegroup.aop.DoAroundMethod" />
+
+    <bean id="store1Proxy"
+        class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="store1" />
+        <property name="interceptorNames">
+            <list>
+                <value>doBeforeMethodBean</value>
+                <value>doAfterMethodBean</value>
+                <value>doAroundMethodBean</value>
+            </list>
+        </property>       
+    </bean>   
+
 </beans>
