@@ -177,7 +177,7 @@ Note here, instead of creating an instance of Store, we are creating instance of
 ....
 {% endhighlight %}
 
-Source code till this point can be accessed [here](https://github.com/vineetma/springtutorial/tree/ce4ceea99ff531f7687707cacef5a53323d2ab9a)
+Source code till this point can be accessed [here](https://github.com/vineetma/springtutorial/tree/65b12079f7ac2769592d8e5d63e1d6eb3672923d)
 
 
 [Back to home](index.html)
