@@ -151,6 +151,7 @@ BUILD SUCCESSFUL
 {% endhighlight %}
 
 ##Adding repositories
+
 ``repositories`` task is special keyword. This is to be initialized by user.
 
 {% highlight bash %}
@@ -158,6 +159,8 @@ repositories {
     mavenCentral()
 }
 {% endhighlight %}
+
+##Adding dependencies
 
 ``dependencies`` task is another keyword to capture dependencies of project on external resources.
 {% highlight bash %}
@@ -169,9 +172,59 @@ dependencies {
 
 Here compile, testCompile are pseudo targets that map to implicit targets used in java plugin defined tasks. It says, whenever those tasks are to be executed, following repositories need to be searched and retrieved for specific version.
 
-#Multiple projects
+##Customizing project
 
-#Dependencies
+As we saw applying a plugin like 'java', there are several default tasks are added implicitly, which are visible only when we run build. Now, we may like to change some properties of these tasks. As shared earlier, gradle allows to customize tasks after they are defined. Lets see an example of this application here:
+
+{% highlight bash %}
+...
+jar {
+    manifest {
+        attributes 'Main-class': 'StoresApp',
+                   'Implementation-Version': '1.0'
+    }
+}
+...
+{% endhighlight %}
+
+Here only the manifest file property is being modified.
+
+Similarly there are properties at project level. Single gradle file at the top level represents project and any property defined at the top level are properties of project. For example: version of the project, sourceCompatibility
+
+{% highlight bash %}
+sourceCompatibility = 1.5
+version = '1.0'
+{% endhighlight %}
+
+##Multiple projects
+
+To build multiple projects, we need to provide with settings file (settings.gradle) with projects listed.
+
+{% highlight bash %}
+    include "shared", "api", "services:webservice", "services:shared"
+{% endhighlight %}
+
+Notice here ":" used instead of "/" to separate directories.
+
+Further in case of multiple projects, there would be need to have common configuration as it is coded same in all the gradle files. Such common information is maintained at the project root directory underwhich sub-projects are maintained. Root directory acts like a container. Gradle in root directory shall provide an injection of this configuration to each project under this container. Lets see an example of such configuration file at the project root directory.
+
+{% highlight bash %}
+subprojects {
+    apply plugin: 'java'
+    repositories {
+       mavenCentral()
+    }
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+    version = '1.0'
+    jar {
+        manifest.attributes provider: 'gradle'
+    }
+}
+{% endhighlight %}
+
+Gradle file in individual sub-projects shall have further modification/addition to the properties received from root, as the need may be.
 
 #Relevant Templates
 
