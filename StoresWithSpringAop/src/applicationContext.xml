@@ -18,11 +18,16 @@
     <bean id="storeitem2" class="com.dakinegroup.StoreItem">
        <property name="erpcode" value="0229003"></property>
     </bean>
+    <bean id="storeitem3" class="com.dakinegroup.StoreItem">
+        <constructor-arg value="0521003" type="String"></constructor-arg>
+        <constructor-arg value="Bearings - steel" type="String"></constructor-arg>
+    </bean>
     <bean id="store1" class="com.dakinegroup.Store">
         <property name="items">
             <list>
                 <ref bean="storeitem1" />
                 <ref bean="storeitem2" />
+                <ref bean="storeitem3" />
             </list>
         </property>
     </bean>
