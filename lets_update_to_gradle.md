@@ -349,6 +349,7 @@ To run:
 $ gradle bootRun
 {% endhighlight %}
 
+Source for this change is available [here](https://github.com/vineetma/springtutorial/tree/eced7a66820f9d96629a75a8f182dbb1515fd891/StoresWithMaven).
 #Relevant Templates
 **TODO**: Include reference to the URL where such templates are mentioned. 
 **TODO**: List commonly used, specifically the one that we would like to use for the storesapp application. 
