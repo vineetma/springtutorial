@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class StoreUIController {
 
-    @RequestMapping("/view2")
-    public String view2() {
+    @RequestMapping("/view")
+    public String view() {
         return "storeuimain";
     }
 
