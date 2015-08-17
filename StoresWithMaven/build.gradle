@@ -3,26 +3,37 @@ buildscript {
         springBootVersion = '1.2.5.RELEASE'
     }
     repositories {
+    jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+       classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
     }
 }
+
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'jetty'
 apply plugin: 'spring-boot'
-apply plugin: 'io.spring.dependency-management' 
+
+
 
 war {
-    exclude "StoresApp.java"
-    
-}
+    inputs.file 'build/libs/StoresWithMaven.war'
+    outputs.file '/opt/tomcat/apache-tomcat-7.0.47/webapps'
+
+    doLast {
+    println "Copying.."
+    copy {
+            from 'build/libs/StoresWithMaven.war'
+            into '/opt/tomcat/apache-tomcat-7.0.47/webapps'
+        }    
+    }
+} 
+
+
 jar {
     baseName = 'stores-app'
     version =  '0.1.0'
@@ -37,11 +48,10 @@ targetCompatibility = 1.8
 
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
-    runtime 'javax.servlet:jstl:1.1.2'
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile group: 'org.apache.logging.log4j', name:'log4j-core', version:'2.3'
     compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testCompile("org.springframework.boot:spring-boot-starter-test") 
     testCompile("junit:junit")
 }
