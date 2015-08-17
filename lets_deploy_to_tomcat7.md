@@ -113,6 +113,7 @@ $ /opt/tomcat/bin/startup.sh
 Now goto, http://localhost:8080/StoresWithMaven/hello to see the page rendered by HelloWorldServlet.
 
 ###Automate war deployment
+
 ####Copy war
 
 Lets modify war task using generic task methods, doLast, inputs.file, outputs.file. Inputs and outputs properties are used to determine if there is any change and hence need to execute the task. Later within doLast, we have written copy spec and called project.copy method.
