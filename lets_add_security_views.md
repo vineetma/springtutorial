@@ -9,6 +9,7 @@ TODO
 
 ##Security
 TODO
+
 ###build.gradle
 TODO
 
@@ -20,8 +21,13 @@ TODO
 
 ##View
 TODO
+
+###build.gradle
+TODO
+
 ###Resources
 TODO
+
 ###Mapping
 TODO
 
