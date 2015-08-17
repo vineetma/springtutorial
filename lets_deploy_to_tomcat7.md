@@ -5,6 +5,20 @@ title: To Tomcat 7
 ---
 
 #Getting Tomcat7 ready
+Download tomcat ``.tar.gz`` file from [here](https://tomcat.apache.org/download-70.cgi). Unzip it at any convenient location which has same permissions as yours, so that deployment can be done.
+
+Setup following variables required for functioning of Tomcat:
+
++ CATALINA_BASE
++ CATALINA_HOME
+
+They should point to the directory where Tomcat bin lib webapps directories are located.
+
+Take a look at following directories to get familiar:
+
++ ``lib`` directory is where all common library files are kept and are by default loaded by tomcat on boot
++ ``webapps`` - here all the applications (.war) files are deployed. On bootup, these are expanded into their respective directories.
++ ``bin`` - here the startup.sh, shutdown.sh scripts are available for you to restart the server.
 
 ##Adding deployment descriptor
 
@@ -70,6 +84,8 @@ public class HelloWorldServlet extends HttpServlet {
 
 We need to add "providedCompile" dependency for javax.servlet-api:3.0.1, as that is provided by tomcat container by default. runtime dependency is required to run jetty container, if required. We will be using the pre-existing tomcat7 container in this case.
 
+**Caution** Do not load 3.1 of servlet api, as it is compatible with Tomcat 8.0. If used, it can cause errors.
+
 {% highlight bash %}
 apply plugin: 'java'
 ...
@@ -79,13 +95,14 @@ apply plugin: 'war'
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
     runtime 'javax.servlet:jstl:1.1.2'
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     ...
     ..
 }
 
 {% endhighlight %}
 
-Now run gradle build root project directory. Later deploy is manually by copying it to ``webapps`` directory in tomcat7 and restart container.
+Now run grad    le build root project directory. Later deploy is manually by copying it to ``webapps`` directory in tomcat7 and restart container.
 {% highlight bash %}
 $ gradle war
 $ cp build/lib/StoresWithMaven.war /opt/tomcat/webapps
@@ -98,6 +115,25 @@ Now goto, http://localhost:8080/StoresWithMaven/hello to see the page rendered b
 ###Automate war deployment
 ####Copy war
 
+Lets modify war task using generic task methods, doLast, inputs.file, outputs.file. Inputs and outputs properties are used to determine if there is any change and hence need to execute the task. Later within doLast, we have written copy spec and called project.copy method.
+
+{% highlight bash %}
+war {
+    inputs.file 'build/libs/StoresWithMaven.war'
+    outputs.file '/opt/tomcat/apache-tomcat-7.0.47/webapps'
+
+    doLast {
+    println "Copying.."
+    copy {
+            from 'build/libs/StoresWithMaven.war'
+            into '/opt/tomcat/apache-tomcat-7.0.47/webapps'
+        }    
+    }
+} 
+{% endhighlight %}
+
 ####Restart Tomcat
+We have to manually restart tomcat
+
 
 
