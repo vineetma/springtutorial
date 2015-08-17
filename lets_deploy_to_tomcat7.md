@@ -6,7 +6,7 @@ title: To Tomcat 7
 
 #Getting Tomcat7 ready
 
-#Adding deployment descriptor
+##Adding deployment descriptor
 
 Deployment descriptor has two important elements
 
@@ -39,7 +39,7 @@ Example from our code is given below:
 </web-app>
 {% endhighlight %}
 
-#Adding Test Code for this servlet
+##Adding Test Code for this servlet
 HelloWorldServlet is created in another sub-package com.dakinegroup.helloworld. Also, notice here the use of annotation, which makes use of deployment descriptor redundant. You can experiment with that. For now, lets keep using deployment descriptor.
 
 {% highlight java %}
@@ -66,7 +66,7 @@ public class HelloWorldServlet extends HttpServlet {
 }
 {% endhighlight %}
 
-#Modifying build.gradle
+##Modifying build.gradle
 
 We need to add "providedCompile" dependency for javax.servlet-api:3.0.1, as that is provided by tomcat container by default. runtime dependency is required to run jetty container, if required. We will be using the pre-existing tomcat7 container in this case.
 
@@ -95,9 +95,9 @@ $ /opt/tomcat/bin/startup.sh
 
 Now goto, http://localhost:8080/StoresWithMaven/hello to see the page rendered by HelloWorldServlet.
 
-##Automate war deployment
-###Copy war
+###Automate war deployment
+####Copy war
 
-###Restart Tomcat
+####Restart Tomcat
 
 
