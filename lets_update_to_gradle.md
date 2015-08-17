@@ -130,6 +130,12 @@ task loadfile << {
 }
 {% endhighlight %}
 
+##Closures
+
+Gradle uses groovy and hence one of the important concepts, closure is used extensively. In above example for ``loadfile``, ``files.each`` command has an arugment of closure. This closure takes ``file`` as an argument and it is followed by the code block. Argument and the code block is to be surrounded by curly braces. 
+
+It seems to be same in functionality of callback, function pointers as used in javascript / c/c++. This means, ``files.each`` shall iterate over each file and that shall be sent as an arugment to the closure. This closure than will execute for every such find. Closure here may also be called as anonymous method/function.
+
 #Tasks
 Like ant, you can define default tasks
 {% highlight bash %}
@@ -159,6 +165,33 @@ Output
 :build
 
 BUILD SUCCESSFUL
+
+{% endhighlight %}
+
+##Task types
+There are several task types [look here for Copy](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html). This is provided as one of the arguments while defining the task e.g. ``task copyDocs(type: Copy) {}``
+
+Other types of tasks are: ``delete``, ``Jar``, ``Javadoc``, ``JavaExec``, ``Tar``, ``War``, ``Zip``. All of them can be explored more from [Gradle Doc Site](https://docs.gradle.org/current/dsl/)
+
+##Task properties
+Each task has a closure, which will define specifications for the task. These specifications consist of 
+
++ properties
++ methods
+
+these properties and methods are specific to the type of the task and any generic properties / methods available. for example:
+
+{% highlight bash %}
+
+task initConfig(type: Copy) {
+    from('src/main/config') {
+        include '**/*.properties'
+        include '**/*.xml'
+        filter(ReplaceTokens, tokens: [version: '2.3.1'])
+    }
+
+into 'build/target/config'
+exclude '**/*.bak'
 
 {% endhighlight %}
 
@@ -354,3 +387,4 @@ Source for this change is available [here](https://github.com/vineetma/springtut
 **TODO**: Include reference to the URL where such templates are mentioned. 
 **TODO**: List commonly used, specifically the one that we would like to use for the storesapp application. 
 
+  
