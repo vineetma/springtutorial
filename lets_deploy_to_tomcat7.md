@@ -132,6 +132,12 @@ war {
 } 
 {% endhighlight %}
 
+###Remove index.html
+{% highlight bash %}
+$ rm StoresWithMaven/src/main/resources/static/index.html
+{% endhighlight %}
+Reason: When we load ``/`` context, it shall give priority to index.html from static folder, than will come to context classes.
+
 ####Restart Tomcat
 We have to manually restart tomcat
 
