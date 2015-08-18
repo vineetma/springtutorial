@@ -14,7 +14,9 @@
   - lets_replace_with_maven
   - lets_update_to_gradle
   - lets_deploy_to_tomcat7
+- title: Web++
   - lets_add_security_views
+  - lets_ut_it_servlets
 - title: REST Services
   docs:
   - integration_with_web
