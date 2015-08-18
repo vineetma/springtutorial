@@ -18,6 +18,16 @@
             <div ng-controller="home" ng-cloak="" class="ng-cloak">
               <p>The ID is {{greeting.id}}</p>
               <p>The content is {{greeting.content}}</p>
+            
+	            <button class="btn btn-small" ng-click="addStore()">Add Store</button>
+	            <button class="btn btn-small" ng-click="addStoreItemMaster()">Add Store Item Master</button>
+	            <button class="btn btn-small" ng-click="addStoreItemQtyToStore()">Add Store Item to Store</button>
+	            <button class="btn btn-small" ng-click="removeStoreItemQtyFromStore()">Remove Store Item Qty from Store</button>
+	            <button class="btn btn-small" ng-click="updateStoreItemStockToStore()">Update Stock Item in Store</button>
+	            <!-- Button to add a store  -->
+	            <!-- Button to add a store item to master -->
+	            <!-- Button to add a store item to store -->
+	            <!-- Button to remove qty of item from store -->
             </div>
         </div>
         <script src="js/angular.min.js" type="text/javascript"></script>

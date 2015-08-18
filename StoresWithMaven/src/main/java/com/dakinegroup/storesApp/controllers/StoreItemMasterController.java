@@ -1,34 +1,35 @@
 package com.dakinegroup.storesApp.controllers;
 
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dakinegroup.storesApp.store.Store;
 
 @RestController
+@RequestMapping("/v1")
 public class StoreItemMasterController {
 
-    @RequestMapping("/v1/master/item/create")
-    public Store create(@RequestParam(value="id", defaultValue="NA") String id) {
-	Store st = new Store(id);
+    @RequestMapping(value="/master/items", method=RequestMethod.POST)
+    public Store create() {
+	Store st = new Store("1");
  	st.displayInfo();
         return st;
     }
     
-    @RequestMapping("/v1/master/item/remove")
-    public Store remove(@RequestParam(value="id", defaultValue="NA") String id) {
-	Store st = new Store(id);
- 	st.displayInfo();
-        return st;
+    @RequestMapping(value="/master/items/{id}", method=RequestMethod.DELETE)
+    public Store remove(@PathVariable(value="id") String id) {
+    	Store st = new Store("4");
+     	st.displayInfo();
+            return st;
     }
 
-    @RequestMapping("/v1/master/item/update")
-    public Store update(@RequestParam(value="id", defaultValue="NA") String id) {
-	Store st = new Store(id);
- 	st.displayInfo();
-        return st;
+    @RequestMapping(value="/master/items/{id}", method=RequestMethod.PUT)
+    public String update(@PathVariable(value="id") String id) {
+    	return "Updating..";
     }
 
 }
