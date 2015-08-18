@@ -29,8 +29,10 @@ TODO
 
 ####Plugins
 TODO
-Git plugin [1](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin), [2](http://www.vogella.com/tutorials/Jenkins/article.html)
-[Gradle Plugin](http://www.vogella.com/tutorials/Jenkins/article.html)
+
++ Git plugin [1](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin), [2](http://www.vogella.com/tutorials/Jenkins/article.html)
++ [Gradle Plugin](http://www.vogella.com/tutorials/Jenkins/article.html)
+
 
 ####Application/Task
 TODO

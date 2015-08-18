@@ -6,7 +6,8 @@ title: Security & MVC
 
 #Security and MVC Implementation
 TODO
-[Inspired from spring.io guides](https://spring.io/guides/gs/securing-web/)
++ [Inspired from spring.io guides](https://spring.io/guides/gs/securing-web/)
++ [Checkout java configuration](http://docs.spring.io/spring-security/site/docs/current/reference/html/jc.html)
 
 ##Security
 TODO
