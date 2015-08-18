@@ -18,10 +18,10 @@
   docs:
   - lets_add_security_views
   - lets_ut_it_servlets
+  - lets_add_angularjs
 - title: REST Services
   docs:
   - integration_with_web
-  - lets_add_angularjs
   - integration_with_hibernate_jpa
   - spring_communications
   
