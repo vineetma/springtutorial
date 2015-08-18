@@ -113,4 +113,10 @@ Add following code towards the end of main function.
 
 {% endhighlight %}
 
+##Spring Boot
+
+**References:**
+
++ [Spring Boot](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle)
+
 [Back to home](index.html)
