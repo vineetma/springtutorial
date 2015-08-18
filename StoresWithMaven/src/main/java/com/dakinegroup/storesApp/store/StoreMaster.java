@@ -1,4 +1,4 @@
-package com.dakinegroup.storesApp.master;
+package com.dakinegroup.storesApp.store;
 
 import java.util.ArrayList;
 import java.util.List;
