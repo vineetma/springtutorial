@@ -5,20 +5,24 @@ buildscript {
     repositories {
     jcenter()
         mavenCentral()
+        maven { url "http://dl.bintray.com/robfletcher/gradle-plugins" }
     }
     dependencies {
        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+       classpath "com.github.robfletcher:compass-gradle-plugin:2.0.5"
     }
 }
 
+plugins {
+  id "com.eriwen.gradle.js" version "1.12.1"
+}
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-
-
+apply plugin: "com.github.robfletcher.compass"
 
 war {
     inputs.file 'build/libs/StoresWithMaven.war'
@@ -32,12 +36,59 @@ war {
         }    
     }
 } 
+war.dependsOn  compassCompile
+war.dependsOn combineJs
 
 
 jar {
     baseName = 'stores-app'
     version =  '0.1.0'
 }
+
+
+// Declare your sources
+javascript.source {
+    dev {
+        js {
+            srcDir 'src/main/resources/public/js'
+            include "*.min.js"
+            //exclude "*.min.js"
+        }
+    }
+    prod {
+        js {
+            srcDir 'src/main/resources/public/js'
+            include "*.min.js"
+        }
+    }
+}
+
+// Handling JS directory begins
+ext {
+    jsDir = 'src/main/resources/public/js'
+}
+combineJs {
+    //encoding = "UTF-8"
+    source = javascript.source.dev.js.files
+    dest = file("${jsDir}/all.js")
+}
+
+minifyJs {
+    source = combineJs
+    dest = file("${jsDir}/all-min.js")
+    sourceMap = file("${jsDir}/all.sourcemap.json")
+    closure {
+        warningLevel = 'QUIET'
+    }
+}
+//------- js directory handling ends
+
+//---- compass for compiling sass files
+compass {
+  cssDir = file("src/main/resources/public/css")
+  sassDir = file("src/main/sass")
+}
+//--- compass handling over
 
 repositories {
     mavenCentral()
@@ -54,6 +105,7 @@ dependencies {
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testCompile("org.springframework.boot:spring-boot-starter-test") 
     testCompile("junit:junit")
+    compass "rubygems:compass:1.0.1"
 }
 
 eclipse {

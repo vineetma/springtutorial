@@ -1,4 +1,4 @@
-package com.dakinegroup.storesApp;
+package com.dakinegroup.storesApp.store;
 
 import java.util.Iterator;
 import java.util.List;
